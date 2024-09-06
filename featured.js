@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Start the carousel movement
-    setInterval(moveCarousel, 500); // Move every 50ms for smooth animation
+    setInterval(moveCarousel, 3000); // Move every 50ms for smooth animation
 
     // Optional: Handle window resize events to adjust carousel width
     window.addEventListener('resize', () => {
