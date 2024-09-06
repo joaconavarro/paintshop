@@ -168,7 +168,7 @@ body {
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 200px; /* Ensure a minimum width for each product */
+    max-width: 18.5vw; /* Ensure a minimum width for each product */
 }
 
 /* Hover effect for the product */
