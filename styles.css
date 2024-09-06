@@ -133,24 +133,38 @@ body {
 .top-section, .bot-section {
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
+
+
 /* Featured Products Carousel */
+header, nav, .featured-products {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Featured Products Section */
 .featured-products {
+    height: 30vh; /* 30% of the vertical view height */
     margin-top: 20px;
     padding: 20px;
     background-color: var(--secondary-color);
-}
-
-.carousel-container {
     overflow: hidden;
-    width: 100%;
+    position: relative;
 }
 
+/* Carousel Container */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Carousel Items */
 .carousel-items {
     display: flex;
-    transition: transform 1s ease;
-    /* Container width is large enough to hold all items in a row */
+    transition: transform 5s ease; /* Updated transition duration */
+    width: calc(100% * (total-items)); /* Width to cover all items */
 }
 
+/* Product Styling */
 .product {
     min-width: 20%;
     background-color: white;
@@ -158,6 +172,14 @@ body {
     padding: 20px;
     text-align: center;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect */
+.product:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
