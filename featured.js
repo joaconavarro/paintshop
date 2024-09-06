@@ -7,10 +7,14 @@ const rotationTime = 5000; // 5 seconds
 const transitionTime = 5000; // Match with CSS transition duration
 
 // Clone the first set of items to create a seamless loop effect
-const carouselContainer = document.querySelector('.carousel-container');
-const clone = document.querySelector('.carousel-items').cloneNode(true);
-carouselContainer.appendChild(clone);
+function createSeamlessLoop() {
+    const firstItemWidth = products[0].offsetWidth + 20; // 20px for margin
+    const clone = carouselItems.cloneNode(true);
+    carouselItems.appendChild(clone);
+    carouselItems.style.width = `calc(${firstItemWidth * (totalItems + visibleItems)}px)`;
+}
 
+// Rotate the carousel
 function rotateCarousel() {
     currentIndex = (currentIndex + 1) % totalItems;
 
@@ -25,7 +29,8 @@ setInterval(rotateCarousel, rotationTime);
 // Ensure the carousel starts with the proper position
 function setInitialPosition() {
     carouselItems.style.transition = 'none'; // Disable transition for initial position
-    carouselItems.style.transform = `translateX(${0}px)`;
+    carouselItems.style.transform = `translateX(0px)`;
+    createSeamlessLoop();
     setTimeout(() => {
         carouselItems.style.transition = `transform ${transitionTime}ms ease`;
     }, 50); // Small delay to ensure transition is re-enabled
