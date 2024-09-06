@@ -1,4 +1,4 @@
-/* Root Variables for Day Mode */
+/* Root Variables for Day Mode (6am - 2pm) */
 :root {
     --main-color: blue;
     --secondary-color: grey;
@@ -6,7 +6,15 @@
     --hover-color: lightblue;
 }
 
-/* Dark Mode Variables */
+/* Noon Mode Variables (2pm - 8pm) */
+:root.noon {
+    --main-color: orange;
+    --secondary-color: #d00000; /* Cherry color */
+    --cta-color: purple;
+    --hover-color: grey;
+}
+
+/* Dark Mode Variables (8pm - 6am) */
 :root.darkmode {
     --main-color: darkgrey;
     --secondary-color: blue;
@@ -47,7 +55,7 @@ body {
 }
 
 .logo img {
-    width: 120px; /* Placeholder size for logo */
+    width: 120px;
 }
 
 .search-bar {
@@ -107,10 +115,6 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
-}
-
-.bot-section ul li {
-    display: inline-block;
 }
 
 .bot-section ul li a {
