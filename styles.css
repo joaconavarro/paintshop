@@ -159,7 +159,7 @@ body {
 
 /* Each product should take 20% of the carousel container width */
 .product {
-    flex: 0 0 10%; /* width */
+    flex: 0 0 20%; /* width */
     background-color: var(--cta-color);
     margin: 0 10px;
     padding: 20px;
