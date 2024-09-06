@@ -142,12 +142,15 @@ body {
     align-items: center; /* Center the carousel vertically if needed */
     justify-content: center; /* Center the carousel horizontally if needed */
 }
-.featured-vertical-text{
-    padding:2vw;
+.featured-vertical-text{    
+    color: white;
+    border: solid;
+    background: #e1854f;
+    padding: 2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 24px; /* Adjust the size as needed */
+    font-size: 24px;
 }
 
 .carousel-container {
