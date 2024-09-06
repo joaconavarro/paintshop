@@ -1,7 +1,7 @@
 /* Root Variables for Day Mode (6am - 2pm) */
 :root {
-    --main-color: blue;
-    --secondary-color: grey;
+    --main-color: grey;
+    --secondary-color: #0f8f89;
     --cta-color: purple;
     --hover-color: lightblue;
 }
@@ -135,6 +135,7 @@ body {
 }
 /* Ensure the section takes up 30% of the viewport height */
 .featured-products {
+    background: var(--secondary-color);
     height: 45vh;
     overflow: hidden; /* Hide overflow to only show part of the carousel-container */
     display: flex;
@@ -142,6 +143,7 @@ body {
     justify-content: center; /* Center the carousel horizontally if needed */
 }
 .featured-vertical-text{
+    padding:2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,6 +185,8 @@ body {
 
 /* Hover effect for the product */
 .product:hover {
-    background-color: #e0e0e0;
+    background-color: var(--main-color);
+}
+.product img:hover {
     transform: scale(1.05);
 }
