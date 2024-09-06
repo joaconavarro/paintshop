@@ -1,7 +1,15 @@
-/* Root Variables */
+/* Root Variables for Day Mode */
 :root {
     --main-color: blue;
     --secondary-color: grey;
+    --cta-color: purple;
+    --hover-color: lightblue;
+}
+
+/* Dark Mode Variables */
+:root.darkmode {
+    --main-color: darkgrey;
+    --secondary-color: blue;
     --cta-color: purple;
     --hover-color: lightblue;
 }
@@ -70,12 +78,4 @@ header {
 .cart-button button {
     background-color: var(--main-color);
     color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.cart-button button:hover {
-    background-color: var(--hover-color);
-}
+   
