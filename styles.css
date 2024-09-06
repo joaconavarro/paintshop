@@ -1,4 +1,4 @@
-/* Root Variables for Day Mode (6am - 2pm) */
+/* Root Variables */
 :root {
     --main-color: blue;
     --secondary-color: grey;
@@ -6,15 +6,15 @@
     --hover-color: lightblue;
 }
 
-/* Noon Mode Variables (2pm - 8pm) */
+/* Noon Mode Variables */
 :root.noon {
     --main-color: orange;
-    --secondary-color: #d00000; /* Cherry color */
+    --secondary-color: #d00000;
     --cta-color: purple;
     --hover-color: grey;
 }
 
-/* Dark Mode Variables (8pm - 6am) */
+/* Dark Mode Variables */
 :root.darkmode {
     --main-color: darkgrey;
     --secondary-color: blue;
@@ -33,103 +33,39 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Sticky Header */
-.top-section, .bot-section {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-/* Top Section (Logo, Search Bar, Cart) */
-.top-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 10px 20px;
-}
-
-.logo {
-    flex: 1;
-}
-
-.logo img {
-    width: 120px;
-}
-
-.search-bar {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-}
-
-.search-bar input[type="text"] {
-    width: 60%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-}
-
-.search-bar button {
-    padding: 8px 15px;
-    margin-left: 10px;
-    background-color: var(--cta-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.search-bar button:hover {
-    background-color: var(--hover-color);
-}
-
-.cart-button {
-    flex: 1;
-    text-align: right;
-}
-
-.cart-button button {
-    background-color: var(--main-color);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.cart-button button:hover {
-    background-color: var(--hover-color);
-}
-
-/* Bottom Section (Navigation) */
-.bot-section {
-    background-color: var(--main-color);
-    text-align: center;
-    padding: 10px 0;
-}
-
-.bot-section ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.bot-section ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-}
-
-.bot-section ul li a:hover {
-    background-color: var(--hover-color);
-    border-radius: 5px;
-}
-
-/* Sticky effect */
-.top-section, .bot-section {
+header, nav, .featured-products {
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Featured Products Carousel */
+.featured-products {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--secondary-color);
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-items {
+    display: flex;
+    transition: transform 1s ease;
+    /* Container width is large enough to hold all items in a row */
+}
+
+.product {
+    min-width: 20%;
+    background-color: white;
+    margin: 0 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
 }
