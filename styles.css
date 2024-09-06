@@ -160,11 +160,20 @@ body {
     height: 100%;
 }
 
-/* Each product takes up 20% of the carousel-container width */
 .product {
     flex: 0 0 20%; /* Each product will take up 20% of the container's width */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    /* Add additional styling for products here */
+    text-align: center; /* Center the text inside the product */
+    background-color: #f0f0f0; /* Light grey background color */
+    border: 1px solid #dcdcdc; /* Optional: Add a border for better definition */
+    padding: 20px; /* Add some padding inside each product */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the product */
+.product:hover {
+    background-color: #e0e0e0; /* Slightly darker grey background on hover */
+    transform: scale(1.05); /* Slightly enlarge the product on hover */
 }
 
 /* Hide overflow of the carousel-container to only show the first 5 products */
