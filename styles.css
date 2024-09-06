@@ -4,6 +4,8 @@
     --secondary-color: #0f8f89;
     --cta-color: purple;
     --hover-color: lightblue;
+    --special-color:#424844;
+
 }
 
 /* Noon Mode Variables (2pm - 8pm) */
@@ -12,14 +14,17 @@
     --secondary-color: #d00000; /* Cherry color */
     --cta-color: purple;
     --hover-color: grey;
+    --special-color:#424844;
+
 }
 
 /* Dark Mode Variables (8pm - 6am) */
 :root.darkmode {
-    --main-color: darkgrey;
-    --secondary-color: blue;
-    --cta-color: purple;
-    --hover-color: lightblue;
+    --main-color: #067993;
+    --secondary-color: #3c104e;
+    --cta-color: #936693;
+    --hover-color: #804fe1;
+    --special-color:#424844;
 }
 
 /* Basic reset */
