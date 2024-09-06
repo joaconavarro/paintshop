@@ -37,12 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Start the carousel movement
-    setInterval(moveCarousel, 3000); // Move every 50ms for smooth animation
-
-    // Optional: Handle window resize events to adjust carousel width
-    window.addEventListener('resize', () => {
-        // Recalculate product width
-        const newProductWidth = products[0].offsetWidth + 20; // Including margin
-        items.style.width = `${newProductWidth * totalProducts * 2}px`;
-    });
+    setInterval(moveCarousel, 3500); // Move every 50ms for smooth animation
+  
 });
