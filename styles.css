@@ -143,48 +143,48 @@ body {
     justify-content: center; /* Center the carousel horizontally if needed */
 }
 
-/* Carousel container takes up 95% of the section height */
+
 .carousel-container {
     height: 95%;
     width: 100%;
-    position: relative; /* Position relative for better control of child elements */
-    overflow: hidden; /* Hide overflow to only show the first 5 products */
-    display: flex; /* Align children horizontally */
+    overflow: hidden; /* Hide the overflow of items */
+    position: relative; /* Ensure children are positioned correctly */
     align-items: center; /* Center products vertically if needed */
+    /* Align children horizontally display: flex; */
 }
-
-/* Carousel items are displayed in a row */
+/* Carousel items should be in a row */
 .carousel-items {
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: calc(100% * 3); /* 3 times the width to allow smooth scrolling */
+    height:100%;
+    transition: transform 0.5s ease; /* Smooth scroll effect */
 }
 
 .product {
-    flex: 0 0 20%; /* Each product will take up 20% of the container's width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    text-align: center; /* Center the text inside the product */
-    background-color: #f0f0f0; /* Light grey background color */
-    border: 1px solid #dcdcdc; /* Optional: Add a border for better definition */
-    padding: 20px; /* Add some padding inside each product */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    flex: 0 0 20%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 1px solid #dcdcdc;
+    padding: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Hover effect for the product */
 .product:hover {
-    background-color: #e0e0e0; /* Slightly darker grey background on hover */
-    transform: scale(1.05); /* Slightly enlarge the product on hover */
+    background-color: #e0e0e0;
+    transform: scale(1.05);
 }
 
-/* Hide overflow of the carousel-container to only show the first 5 products */
+/* Hide overflow of the carousel-container to only show the first 5 products 
 .carousel-container {
     overflow: hidden;
-    white-space: nowrap; /* Ensure items don't wrap to the next line */
+    white-space: nowrap;  Ensure items don't wrap to the next line 
 }
 
-/* Optional: Add this if you want to hide products that are not visible in the viewport */
+/* Optional: Add this if you want to hide products that are not visible in the viewport 
 .carousel-items {
     display: flex;
-    transition: transform 0.5s ease; /* Smooth transition for carousel animation */
+    transition: transform 0.5s ease; /* Smooth transition for carousel animation 
 }
-
+*/
