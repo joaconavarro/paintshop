@@ -1,10 +1,10 @@
 /* Root Variables for Day Mode (6am - 2pm) */
 :root {
-    --main-color: grey;
-    --secondary-color: #0f8f89;
-    --cta-color: purple;
-    --hover-color: lightblue;
-    --special-color:#424844;
+    --main-color: #9b3397;
+    --secondary-color: #14a59e;
+    --cta-color: #544dbd;
+    --hover-color: #5ba2f9;
+    --special-color:#5ba2f9;
 
 }
 
