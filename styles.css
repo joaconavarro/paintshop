@@ -133,13 +133,6 @@ body {
 .top-section, .bot-section {
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
-
-
-/* Featured Products Carousel */
-header, nav, .featured-products {
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
-}
-
 /* Featured Products Section */
 .featured-products {
     height: 30vh; /* 30% of the vertical view height */
@@ -161,7 +154,7 @@ header, nav, .featured-products {
 .carousel-items {
     display: flex;
     transition: transform 5s ease; /* Updated transition duration */
-    width: calc(100% * (total-items)); /* Width to cover all items */
+    white-space: nowrap; /* Ensure items stay in a single line */
 }
 
 /* Product Styling */
@@ -173,16 +166,10 @@ header, nav, .featured-products {
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Ensure products align in a single line */
 }
 
 /* Hover Effect */
-.product:hover {
-    background-color: var(--hover-color);
-    cursor: pointer;
-}
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .product:hover {
     background-color: var(--hover-color);
     cursor: pointer;
