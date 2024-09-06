@@ -10,10 +10,10 @@
 
 /* Noon Mode Variables (2pm - 8pm) */
 :root.noon {
-    --main-color: orange;
-    --secondary-color: #d00000; /* Cherry color */
-    --cta-color: purple;
-    --hover-color: grey;
+    --main-color: #efb638;
+    --secondary-color: #ed5b43;
+    --cta-color: #302c2a;
+    --hover-color: #993333;
     --special-color:#424844;
 
 }
@@ -152,7 +152,7 @@ body {
 .featured-vertical-text{    
     color: white;
     border: solid;
-    background: #e1854f;
+    background: var(--special-color);
     padding: 2vw;
     display: flex;
     flex-direction: column;
