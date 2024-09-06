@@ -7,33 +7,41 @@ const rotationTime = 5000; // 5 seconds
 const transitionTime = 5000; // Match with CSS transition duration
 
 // Clone the first set of items to create a seamless loop effect
-function createSeamlessLoop() {
-    const firstItemWidth = products[0].offsetWidth + 20; // 20px for margin
-    const clone = carouselItems.cloneNode(true);
-    carouselItems.appendChild(clone);
-    carouselItems.style.width = `calc(${firstItemWidth * (totalItems + visibleItems)}px)`;
+const clone = carouselItems.cloneNode(true);
+document.querySelector('.carousel-container').appendChild(clone);
+
+// Adjust the width of the carousel-items container
+function adjustCarouselWidth() {
+    const productWidth = products[0].offsetWidth + 20; // Width including margins
+    const totalWidth = productWidth * totalItems;
+    carouselItems.style.width = `${totalWidth}px`;
+    document.querySelector('.carousel-container .carousel-items:last-child').style.width = `${totalWidth}px`;
 }
 
-// Rotate the carousel
+// Move to the next set of products
 function rotateCarousel() {
     currentIndex = (currentIndex + 1) % totalItems;
 
     // Calculate the translateX value to show the next set of products
-    const translateXValue = -currentIndex * (products[0].offsetWidth + 20); // 20px for margin
+    const productWidth = products[0].offsetWidth + 20; // Width including margins
+    const translateXValue = -currentIndex * productWidth; 
     carouselItems.style.transform = `translateX(${translateXValue}px)`;
+
+    // Reset position after completing one full rotation
+    if (currentIndex === 0) {
+        setTimeout(() => {
+            carouselItems.style.transition = 'none'; // Disable transition
+            carouselItems.style.transform = `translateX(0px)`; // Reset to the start
+            setTimeout(() => {
+                carouselItems.style.transition = `transform ${transitionTime}ms ease`; // Re-enable transition
+            }, 50); // Small delay to ensure transition is re-enabled
+        }, rotationTime - 50); // Wait until the rotation time is almost over
+    }
 }
 
-// Run the rotation every 5 seconds
-setInterval(rotateCarousel, rotationTime);
-
-// Ensure the carousel starts with the proper position
-function setInitialPosition() {
-    carouselItems.style.transition = 'none'; // Disable transition for initial position
-    carouselItems.style.transform = `translateX(0px)`;
-    createSeamlessLoop();
-    setTimeout(() => {
-        carouselItems.style.transition = `transform ${transitionTime}ms ease`;
-    }, 50); // Small delay to ensure transition is re-enabled
-}
-
-window.onload = setInitialPosition;
+// Initialize carousel width and start rotation
+window.onload = () => {
+    adjustCarouselWidth();
+    rotateCarousel();
+    setInterval(rotateCarousel, rotationTime);
+};
