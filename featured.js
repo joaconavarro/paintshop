@@ -10,13 +10,6 @@ const transitionTime = 5000; // Match with CSS transition duration
 const clone = carouselItems.cloneNode(true);
 document.querySelector('.carousel-container').appendChild(clone);
 
-// Adjust the width of the carousel-items container
-function adjustCarouselWidth() {
-    const productWidth = products[0].offsetWidth + 20; // Width including margins
-    const totalWidth = productWidth * totalItems;
-    carouselItems.style.width = `${totalWidth}px`;
-    document.querySelector('.carousel-container .carousel-items:last-child').style.width = `${totalWidth}px`;
-}
 
 // Move to the next set of products
 function rotateCarousel() {
@@ -41,7 +34,6 @@ function rotateCarousel() {
 
 // Initialize carousel width and start rotation
 window.onload = () => {
-    adjustCarouselWidth();
     rotateCarousel();
     setInterval(rotateCarousel, rotationTime);
 };
