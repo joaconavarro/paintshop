@@ -135,7 +135,7 @@ body {
 }
 /* Ensure the section takes up 30% of the viewport height */
 .featured-products {
-    height: 30vh;
+    height: 45vh;
     overflow: hidden; /* Hide overflow to only show part of the carousel-container */
     display: flex;
     align-items: center; /* Center the carousel vertically if needed */
@@ -154,7 +154,7 @@ body {
 .carousel-items {
     display: flex;
     width: 100%; /* Adjusted to fit the container width */
-    height: 150%;
+    height: 100%;
     transition: transform 0.5s ease; /* Smooth scroll effect */
     will-change: transform; /* Improve performance */
 }
