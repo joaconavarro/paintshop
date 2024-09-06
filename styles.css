@@ -141,6 +141,11 @@ body {
     align-items: center; /* Center the carousel vertically if needed */
     justify-content: center; /* Center the carousel horizontally if needed */
 }
+.featured-vertical-text{
+    writing-mode: vertical-rl; /* Makes text vertical from top to bottom */
+    transform: rotate(180deg); /* Optional: rotate to change direction */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
 
 .carousel-container {
     height: 95%;
