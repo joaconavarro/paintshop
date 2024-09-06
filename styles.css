@@ -161,13 +161,14 @@ body {
 }
 
 .product {
-    flex: 0 0 20%;
-    box-sizing: border-box;
-    text-align: center;
-    background-color: #f0f0f0;
-    border: 1px solid #dcdcdc;
+     flex: 1 0 20%; /* Ensure each product takes 20% of the container width */
+    background-color: white;
+    margin: 0 10px;
     padding: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px; /* Ensure a minimum width for each product */
 }
 
 /* Hover effect for the product */
