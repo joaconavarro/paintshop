@@ -135,7 +135,8 @@ body {
 }
 /* Ensure the section takes up 30% of the viewport height */
 .featured-products {
-    margin:4px;
+    margin-top:4px;
+    margin-bot:4px;
     background: var(--secondary-color);
     height: 45vh;
     overflow: hidden; /* Hide overflow to only show part of the carousel-container */
