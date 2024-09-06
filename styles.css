@@ -147,6 +147,7 @@ body {
     width: 100%;
     overflow: hidden; /* Hide the overflow of items */
     position: relative; /* Ensure children are positioned correctly */
+    white-space: nowrap; /* Prevent wrapping of items */
 }
 
 /* Carousel items should be in a row */
@@ -155,6 +156,7 @@ body {
     width: 100%; /* Adjusted to fit the container width */
     height: 100%;
     transition: transform 0.5s ease; /* Smooth scroll effect */
+    will-change: transform; /* Improve performance */
 }
 
 /* Each product should take 20% of the carousel container width */
