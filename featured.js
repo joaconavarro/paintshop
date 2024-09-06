@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Duplicate the carousel items to create a loop effect
     items.innerHTML += items.innerHTML; // Duplicate items
-    const itemWidth = productWidth * totalProducts;
-    items.style.width = `${itemWidth * 2}px`; // Adjust width for duplicated items
+    const itemWidth = productWidth;
 
     let index = 0;
     const moveCarousel = () => {
