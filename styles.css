@@ -39,14 +39,11 @@ body {
 }
 
 /* Sticky Header */
-.top-section, .bot-section {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
 
-/* Top Section (Logo, Search Bar, Cart) */
 .top-section {
+    position: sticky;
+    top: 0; /* Sticks to the top */
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,6 +109,9 @@ body {
 
 /* Bottom Section (Navigation) */
 .bot-section {
+    position: sticky;
+    top: 60px; /* Adjust this value based on the height of .top-section */
+    z-index: 9; /* Lower z-index to ensure it stays below .top-section */
     background-color: var(--main-color);
     text-align: center;
     padding: 10px 0;
