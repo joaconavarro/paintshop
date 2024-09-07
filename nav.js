@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const featuredProducts = document.getElementById('featured-products');
     const mainSection = document.getElementById('main-section');
     const contentDivs = mainSection.querySelectorAll('.content');
+    const inicioContent = document.getElementById('inicio-content'); ;
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Show the corresponding content div
                 const contentToShow = document.getElementById(`${linkId}-content`);
                 if (contentToShow) {
+                    inicioContent.style.display = 'none';
                     contentToShow.style.display = 'block';
                 }
             }
