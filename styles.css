@@ -50,6 +50,7 @@ body {
     background-color: var(--secondary-color);
     color: white;
     padding: 10px 20px;
+    height:14vh;
 }
 
 .logo {
@@ -110,7 +111,7 @@ body {
 /* Bottom Section (Navigation) */
 .bot-section {
     position: sticky;
-    top: 60px; /* Adjust this value based on the height of .top-section */
+    top: 14vh; /* Adjust this value based on the height of .top-section */
     z-index: 9; /* Lower z-index to ensure it stays below .top-section */
     background-color: var(--main-color);
     text-align: center;
