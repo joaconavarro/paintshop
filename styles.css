@@ -200,8 +200,13 @@ body {
 .product img:hover {
     transform: scale(1.05);
 }
+.main-section{
+    color:black;
+    background-color: var(--main-color);
+}
 
 
+/* FONTS */
 .roboto-thin {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
