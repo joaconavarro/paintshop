@@ -204,7 +204,24 @@ body {
     color:black;
     background-color: var(--main-color);
 }
+.main-section {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 0 2vw; /* Add padding on the left and right */
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
 
+/* Centered content styling */
+.main-section .content {
+    max-width: 100%; /* Ensure content does not exceed the container */
+    text-align: center; /* Center text inside content divs */
+}
+
+.main-section .content p {
+    font-size: 1.2rem; /* Adjust font size as needed */
+}
 
 /* FONTS */
 .roboto-thin {
