@@ -144,7 +144,7 @@ body {
 /* Ensure the section takes up 30% of the viewport height */
 .featured-products {
     margin-top:4px;
-    margin-bot:4px;
+    margin-bottom:4px;
     background: var(--secondary-color);
     height: 45vh;
     overflow: hidden; /* Hide overflow to only show part of the carousel-container */
@@ -214,7 +214,6 @@ body {
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     margin: 1vh .5vh; /* Add margin */
-    widht: 100%;
     box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
@@ -230,32 +229,66 @@ body {
 
 
 /* Galeria section*/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 
 .gallery {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px; /* Adjust the gap between diamonds as needed */
-    width: 300px; /* Adjust the width of the gallery as needed */
-    height: 300px; /* Adjust the height of the gallery as needed */
+    background-color: #3c104e;
+    width: 90vw; /* Set the width of the gallery to 90% of the viewport width */
+    max-width: 100%; /* Ensure the gallery doesn’t exceed viewport width */
+    margin: 0 auto; /* Center the gallery horizontally */
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 12vh; /* Space between rows */
+    box-sizing: border-box; /* Ensure padding and border are included in width and height calculations */
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Center items horizontally in each row */
+    gap: 9.3%; /* Space between diamonds in a row, adjust as needed */
+    flex-wrap: wrap; /* Allow rows to wrap if there are too many diamonds */
 }
 
 .diamond {
-    width: 100%;
-    height: 100%;
-    background-color: green;
+    width: 20vw; /* Use viewport width to maintain responsive sizing */
+    height: 20vw; /* Use viewport width to maintain aspect ratio */
+    background-color: green; /* Background color */
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotate(45deg); /* Flip the box to diamond shape */
+    transform: rotate(45deg); /* Rotate to diamond shape */
     overflow: hidden;
+    position: relative; /* Required for absolute positioning of the image */
 }
 
 .diamond img {
-    width: 100px; /* Adjust as needed */
-    height: 100px; /* Adjust as needed */
-    transform: rotate(-45deg); /* Flip the image back to normal */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%; /* Scale up image to cover the entire diamond */
+    height: 200%; /* Scale up image to cover the entire diamond */
+    object-fit: cover; /* Ensure image covers the container */
+    transform: translate(-50%, -50%) rotate(-45deg); /* Center and rotate the image back */
 }
+
+/* Independent margins for each row */
+#first {
+    margin-top: 6em;
+}
+
+#second {
+    margin-top: -6em;
+}
+
+#third {
+    margin-top: -6em;
+    margin-bottom: 6em;
+}
+
 
 /* FONTS */
 .roboto-thin {
