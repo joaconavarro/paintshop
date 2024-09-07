@@ -201,15 +201,17 @@ body {
     transform: scale(1.05);
 }
 .main-section{
-    color:black;
     background-color: var(--main-color);
+}
+#incio-content img{
+    width:500px;
 }
 .main-section {
     display: flex;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     padding: 0 2vw; /* Add padding on the left and right */
-    height: 100vh; /* Full viewport height */
+    widht: 100%;
     box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
