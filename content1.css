@@ -1,23 +1,68 @@
-/* Container styling */
 #pinturas-content {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
     padding: 20px 10px;
     background-color: #f5f5f5;
-    width:97vw;
+    width: 98vw;
+    box-sizing: border-box;
 }
-.content1{
-    width: 100%;
+
+.search-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack the search bar vertically */
+    margin-bottom: 20px; /* Space between search bar and content */
+}
+
+.search-bar {
+    background-color: #fff; /* Background color */
+    padding: 10px; /* Padding around the search bar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for better visibility */
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Space between input and button */
+}
+
+.search-bar input[type="text"] {
+    flex: 1; /* Allow input to take up available space */
+    padding: 10px; /* Add padding inside the input */
+    border: 1px solid #ddd; /* Border around input */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.search-bar button {
+    background: none; /* No background for the button */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.search-bar img {
+    width: 20px; /* Set the size of the search icon */
+}
+
+.content-wrapper {
+    display: flex; /* Display filters and content side by side */
+    gap: 20px; /* Space between filters and content */
+    flex: 1; /* Allow content-wrapper to grow and fill available space */
 }
 
 .filters-panel {
     width: 15%; /* Adjust width as needed */
     padding: 10px;
-    margin-right: 20px;
     background-color: #ddd;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    overflow: auto; /* Allow vertical scrolling within the panel if needed */
 }
+
+.content1 {
+    width: 100%; /* Adjust width as needed */
+    padding: 10px 5px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allow vertical scrolling */
+    display: flex;
+    flex-direction:row;
+    gap:20px;
+    flex-wrap: wrap;
+}
+
 
 .accordion-button {
     background-color: #3c104e;

@@ -38,6 +38,17 @@ body {
     color:white;
 }
 
+/* Hide scrollbar for Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Internet Explorer, Edge, and Firefox */
+html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 /* Sticky Header */
 
 .top-section {
@@ -59,33 +70,6 @@ body {
 
 .logo img {
     width: 180px;
-}
-
-.search-bar {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-}
-
-.search-bar input[type="text"] {
-    width: 60%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-}
-
-.search-bar button {
-    padding: 8px 15px;
-    margin-left: 10px;
-    background-color: var(--cta-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.search-bar button:hover {
-    background-color: var(--hover-color);
 }
 
 .cart-button {

@@ -15,6 +15,7 @@
     <script src="nav.js" defer></script>
     <script src="accordion.js" defer></script>
 
+
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,11 +29,6 @@
             <img src="jpegs/logo2.svg" alt="Logo de la Tienda de Pinturas">
         </div>
 
-        <div class="search-bar">
-            <input type="text" id="search-bar" placeholder="Buscar productos de pintura...">
-            <button>
-                <img src="./jpegs/busqueda.png" alt="Lupa" style="width:20px"></button>
-        </div>
 
         <div class="cart-button">
             <button>
@@ -123,6 +119,57 @@
     </div>
    
     <div id="pinturas-content" class="content" style="display:none;">
+        <div class="search-bar">
+            <input type="text" id="search-bar" placeholder="Buscar productos de pintura...">
+            <button>
+                <img src="./jpegs/busqueda.png" alt="Lupa" style="width:20px">
+            </button>
+        </div>
+        <div class="content-wrapper">
+            <div class="filters-panel">
+                <div class="accordion">
+                    <button class="accordion-button">Categoría</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li><a href="#">Categoría 1</a></li>
+                            <li><a href="#">Categoría 2</a></li>
+                            <li><a href="#">Categoría 3</a></li>
+                        </ul>
+                    </div>
+                    <button class="accordion-button">Precio</button>
+                    <div class="accordion-content">
+                        <input type="range" id="price-range" min="0" max="500000" step="5000" value="10000">
+                        <label for="price-range">Precio: $<span id="price-value">5000</span></label>
+                    </div>
+                    <button class="accordion-button">Categoría</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li><a href="#">Categoría 1</a></li>
+                            <li><a href="#">Categoría 2</a></li>
+                            <li><a href="#">Categoría 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content1" id="content1">
+                <div class="grid-container">
+                    <!-- Flip Cards loaded from json -->
+                       
+                </div>             
+            </div>
+        </div>
+        <button id="load-more" class="load-more">Load More</button>            
+    </div>
+    
+    
+
+
+    <div id="ferreteria-content" class="content" style="display:none;">
+        <p>Ferretería Content</p>
+    </div>
+
+    <div id="herramientas-content" class="content" style="display:none;">
+        
         <div class="filters-panel">
             <div class="accordion">
                 <button class="accordion-button">Categoría</button>
@@ -283,20 +330,7 @@
             <button class="load-more">Load More</button>
         </div>
     </div>
-    
-    
 
-
-    <div id="ferreteria-content" class="content" style="display:none;">
-        <p>Ferretería Content</p>
-    </div>
-    <div id="herramientas-content" class="content" style="display:none;">
-        
-        
-
-
-        
-    </div>
     <div id="sanitarios-content" class="content" style="display:none;">
         <p>Sanitarios Content</p>
     </div>
@@ -326,11 +360,14 @@
     </div>
 </section>
 
-    <script src="script.js"></script>
-    <footer>
+    
+
+<footer>
         <div>
             <a href="https://www.flaticon.es/iconos-gratis/carrito-de-compras" title="carrito-de-compras iconos">Carrito-de-compras iconos creados por Pixel perfect - Flaticon</a>
         </div>
-    </footer>
+</footer>
+<script src="script.js" defer></script>
+<script src="searchbar1.js" defer></script>
 </body>
 </html>
