@@ -96,8 +96,7 @@ body {
 }
 
 .cart-button button {
-    background-color: var(--main-color);
-    color: white;
+    background-color: white;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -106,6 +105,9 @@ body {
 
 .cart-button button:hover {
     background-color: var(--hover-color);
+}
+#carrito:hover{
+    transform: scale(1.1);
 }
 
 /* Bottom Section (Navigation) */
@@ -198,7 +200,7 @@ body {
     background-color: var(--main-color);
 }
 .product img:hover {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 .main-section{
     background-color: var(--main-color);
