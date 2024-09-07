@@ -107,7 +107,7 @@ body {
     background-color: var(--hover-color);
 }
 #carrito:hover{
-    transform: scale(1.1);
+    transform: scale(1.3);
 }
 
 /* Bottom Section (Navigation) */
