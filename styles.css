@@ -210,7 +210,7 @@ body {
     display: flex;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-    padding: 0 2vw; /* Add padding on the left and right */
+    margin: 1vh .5vh; /* Add margin */
     widht: 100%;
     box-sizing: border-box; /* Include padding in element's total width and height */
 }
