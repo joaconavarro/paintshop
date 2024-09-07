@@ -4,6 +4,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainSection = document.getElementById('main-section');
     const contentDivs = mainSection.querySelectorAll('.content');
     const inicioContent = document.getElementById('inicio-content'); ;
+
+    const displayProperties = {
+        'pinturas': 'flex',
+        'ferreteria': 'flex',
+        'herramientas': 'flex',
+        'sanitarios': 'flex',
+        'herramientas': 'flex',        
+        'catalogo': 'block',
+        'galeria': 'block',
+        // Add other sections and their display properties here
+    };
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
@@ -22,11 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     div.style.display = 'none';
                 });
 
+                
                 // Show the corresponding content div
                 const contentToShow = document.getElementById(`${linkId}-content`);
                 if (contentToShow) {
-                    inicioContent.style.display = 'none';
-                    contentToShow.style.display = 'block';
+                    // Set the display property based on the linkId
+                    const displayProperty = displayProperties[linkId] || 'block'; // Default to 'block' if not specified
+                    contentToShow.style.display = displayProperty;
+                    inicioContent.style.display = "none";
                 }
             }
         });

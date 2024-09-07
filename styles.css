@@ -234,6 +234,9 @@ html, body {
     padding: 0;
     height: 100%;
 }
+#galeria-content{    
+    display:block;
+}
 
 .gallery {
     background-color: #3c104e;
