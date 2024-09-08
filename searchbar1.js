@@ -25,7 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3>${item.title}</h3>
                         <p>${item.price}</p>
                         <p>${item.description}</p>
-                        <button class="add-to-cart">Add to Cart</button>
+                        <button class="add-to-cart" 
+                data-image="${item.image}" 
+                data-title="${item.title}" 
+                data-price="${item.price}">
+                Add to Cart
+            </button>
                     </div>
                 </div>
             </div>
@@ -48,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3>No se ha encontrado</h3>
                         <p>$0.00</p>
                         <p>El producto que usted busca no está dentro de nuestro inventario.</p>
-                        <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
             </div>

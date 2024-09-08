@@ -18,3 +18,4 @@ function applyDayOrNightMode() {
 
 // Apply the appropriate mode when the page loads
 window.onload = applyDayOrNightMode;
+

@@ -14,6 +14,8 @@
     <script src="featured.js" defer></script>
     <script src="nav.js" defer></script>
     <script src="accordion.js" defer></script>
+    <script src="cart.js" defer></script>
+
 
 
     
@@ -29,13 +31,26 @@
             <img src="jpegs/logo2.svg" alt="Logo de la Tienda de Pinturas">
         </div>
 
-
-        <div class="cart-button">
-            <button>
-                <img id="carrito" src="./jpegs/carros.png" alt="Carrito" style="width:30px">
+        <div class="cart-button" id="cart-button-div">
+            <button id="cart-button" class="cart-button">
+                <img class="cart-button-image" src="./jpegs/carros.png" alt="Carrito" style="width:30px">
             </button>
         </div>
+        
+        <!-- Drawer structure -->
+        <div id="cart-drawer" class="drawer">
+            <div class="drawer-content">
+                <span class="close-button" id="close-drawer">&times;</span>
+                <h2 style="color: black;">Mi carrito:</h2>
+                <!-- Cart items will be dynamically added here -->
+                <div id="cart-items"></div>
+                <div id="total-price">Total: $0.00</div>
+                <button id="checkout-button">Pagar</button>
+            </div>
+        </div>
+        
     </header>
+
 
     <!-- Bottom Section (Navigation) -->
     <nav class="bot-section">
