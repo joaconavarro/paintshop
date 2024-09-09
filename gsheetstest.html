@@ -39,20 +39,20 @@
                 }
                 
                 function renderItems(data) {
-                    itemList.innerHTML = data.slice(1).map(row => `
-                        <li>
-                            <img src="${row[1]}" style="width:50px">
-                            <div>
-                                <h4>${row[2]}</h4>
-                                <p>${row[3]}</p>
-                                <p>${row[4]}</p>
-                                <p>Stock: ${row[5]}</p>
-                            </div>
-                        </li>
-                    `).join('');
-                }
-                
-                fetchItems();
+        itemList.innerHTML = data.slice(1).map(row => `
+            <li>
+                <img src="${row[0]}" alt="${row[1]}" style="width:50px"> <!-- Adjusted index for image URL -->
+                <div>
+                    <h4>${row[1]}</h4> <!-- Adjusted index for title -->
+                    <p>Price: ${row[2]}</p> <!-- Adjusted index for price -->
+                    <p>Description: ${row[3]}</p> <!-- Adjusted index for description -->
+                    <p>Stock: ${row[4]}</p> <!-- Adjusted index for stock -->
+                </div>
+            </li>
+        `).join('');
+    }
+
+    fetchItems();
             });
         </script>
     </div>
