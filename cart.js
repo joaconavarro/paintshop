@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         cartItemsContainer.innerHTML = ''; // Clear previous items
         let totalPrice = 0;
-
+    
         for (const [itemId, item] of Object.entries(cart)) {
             const itemHTML = `
                 <div class="cart-item" data-id="${itemId}">
@@ -56,48 +56,68 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItemsContainer.innerHTML += itemHTML;
             totalPrice += parseFloat(item.price.replace('$', '')) * item.quantity;
         }
-
+    
         // Update total price
         if (totalPriceElement) {
             totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
         } else {
             console.error('Total price element not found!');
         }
-
+    
         // Update the cart button quantity display
         updateCartButtonQuantity();
     }
+    
 
     // Add item to cart
     function addToCart(item) {
         const itemId = item.title; // Assuming title is unique
         if (cart[itemId]) {
-            cart[itemId].quantity += 1;
+            if (cart[itemId].quantity < item.stock) {
+                cart[itemId].quantity += 1;
+            } else {
+                console.log('Cannot increase quantity. Stock limit reached.');
+                return;
+            }
         } else {
             cart[itemId] = {
                 image: item.image,
                 title: item.title,
                 price: item.price,
-                quantity: 1
+                quantity: 1,
+                stock: item.stock // Ensure stock is included
             };
         }
         renderCart();
     }
+    
 
     // Handle cart actions
     function handleCartAction(event) {
         const target = event.target;
         if (!target.closest('.cart-item-actions')) return;
-
+    
         const itemElement = target.closest('.cart-item');
         if (!itemElement) return;
-        
+    
         const itemId = itemElement.getAttribute('data-id');
+        const item = cart[itemId];
+    
+        if (!item) {
+            console.error('Item not found in cart:', itemId);
+            return;
+        }
+    
         if (target.classList.contains('increase-quantity')) {
-            cart[itemId].quantity += 1;
+            if (item.quantity < item.stock) {
+                item.quantity += 1;
+            } else {
+                console.log('Cannot increase quantity. Stock limit reached.');
+                return;
+            }
         } else if (target.classList.contains('decrease-quantity')) {
-            if (cart[itemId].quantity > 1) {
-                cart[itemId].quantity -= 1;
+            if (item.quantity > 1) {
+                item.quantity -= 1;
             } else {
                 delete cart[itemId];
             }
@@ -106,6 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         renderCart();
     }
+    
+    
+    
 
     // Add event listeners
     document.addEventListener('click', (event) => {
@@ -113,7 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const item = {
                 image: event.target.dataset.image,
                 title: event.target.dataset.title,
-                price: event.target.dataset.price
+                price: event.target.dataset.price,
+                stock: event.target.dataset.stock
             };
             addToCart(item);
         } else if (event.target.classList.contains('increase-quantity') ||

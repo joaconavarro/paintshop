@@ -9,8 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;  // Track which items are currently displayed
     let searchQuery = '';  // Store the current search query
 
-    // Function to create a flip card element
     function createFlipCard(item) {
+        const addToCartButton = item.stock > 0
+            ? `<button class="add-to-cart" data-image="${item.image}" data-title="${item.title}" data-price="${item.price}" data-stock="${item.stock}">Add to Cart</button>`
+            : '';
+    
         return `
             <div class="flip-card">
                 <div class="flip-card-inner">
@@ -22,20 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="flip-card-back">
+                        <p>${item.description}</p>
                         <h3>${item.title}</h3>
                         <p>${item.price}</p>
-                        <p>${item.description}</p>
-                        <button class="add-to-cart" 
-                data-image="${item.image}" 
-                data-title="${item.title}" 
-                data-price="${item.price}">
-                Add to Cart
-            </button>
+                        ${addToCartButton}
                     </div>
                 </div>
             </div>
         `;
     }
+    
+
 
     // Function to create a "not found" flip card
     function createNotFoundCard() {

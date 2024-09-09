@@ -20,6 +20,11 @@ async function fetchItems() {
 
 // Function to create a flip card element
 function createFlipCard(item) {
+    // Determine whether to show the "Add to Cart" button
+    const addToCartButton = item.stock > 0 
+        ? `<button class="add-to-cart">Add to Cart</button>` 
+        : '';
+
     return `
         <div class="flip-card">
             <div class="flip-card-inner">
@@ -34,12 +39,13 @@ function createFlipCard(item) {
                     <p>${item.description}</p>
                     <h3>${item.title}</h3>
                     <p>${item.price}</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                    ${addToCartButton}
                 </div>
             </div>
         </div>
     `;
 }
+
 
 // Function to load more items
 async function loadMoreItems() {
