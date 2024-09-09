@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="${item.image}" alt="${item.title}">
+                        <img src="${item.image}" alt="${item.title}" style="width:30vh">
                         <div style="color: black;">
                             <h3>${item.title}</h3>
                             <p>${item.price}</p>
