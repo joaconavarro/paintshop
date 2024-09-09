@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        /* Basic reset */
+        body, h1, h2, ul, form {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1, h2 {
+            color: #343a40;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        #item-list {
+            list-style-type: none;
+        }
+
+        #item-list li {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <button id="load-data">Load Data</button>
+    <button id="save-data">Save Data</button>
+    
+    <h2>Items</h2>
+    <ul id="item-list"></ul>
+    
+    <h2>Add/Edit Item</h2>
+    <form id="item-form">
+        <input type="hidden" id="item-id">
+        <input type="text" id="item-image" placeholder="Image URL" required>
+        <input type="text" id="item-title" placeholder="Title" required>
+        <input type="text" id="item-price" placeholder="Price" required>
+        <input type="text" id="item-description" placeholder="Description">
+        <input type="text" id="item-stock" placeholder="Stock" required>
+        <button type="submit">Save Item</button>
+    </form>
+
+    <script src="admin.js"></script>
+</body>
+</html>
