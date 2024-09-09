@@ -1,10 +1,10 @@
 {
     "items": [
       {
-        "image": 1,
+        "image": "Artículos/albatros.webp",
         "title": "ALBATROS x 4 Litros <br><br>",
         "price": "$46000 <br><br>",
-        "description": " Barniz interior poliuretánico brillante Alba. <br><br>",
+        "description": " Barniz Marino Exterior Doble Filtro Solar Brillante Alba. <br><br>",
         "stock": "5"
       },
       {
