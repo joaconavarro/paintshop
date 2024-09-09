@@ -1,43 +1,46 @@
-// server.js or app.js
-
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const cors = require('cors');
+const { OAuth2Client } = require('google-auth-library');
+const bodyParser = require('body-parser');
 const app = express();
-const port = process.env.PORT || 5500;
+const PORT = process.env.PORT || 3000;
+const cors = require('cors');
+app.use(cors());
 
-app.use(express.json()); // Middleware to parse JSON bodies
-app.use(cors()); // Enable CORS for cross-origin requests
 
-// Endpoint to update stock
-app.post('/update-stock', (req, res) => {
-    const updatedItems = req.body.items;
-    if (!Array.isArray(updatedItems)) {
-        return res.status(400).json({ error: 'Invalid data format' });
-    }
+// Replace with your Google Client ID
+const CLIENT_ID = '425627947718-26j5n0t5t3kme55govd3n463ogolfjbo.apps.googleusercontent.com';
+const adminEmail = 'pramietest@gmail.com'; // Replace with your admin email
 
-    const filePath = path.join(__dirname, 'items.json');
+const client = new OAuth2Client(CLIENT_ID);
 
-    fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err) return res.status(500).json({ error: 'Error reading file' });
+app.use(bodyParser.json());
 
-        let jsonData;
-        try {
-            jsonData = JSON.parse(data);
-        } catch (e) {
-            return res.status(500).json({ error: 'Error parsing JSON' });
-        }
-
-        jsonData.items = updatedItems;
-
-        fs.writeFile(filePath, JSON.stringify(jsonData, null, 2), 'utf8', (err) => {
-            if (err) return res.status(500).json({ error: 'Error writing file' });
-            res.status(200).json({ message: 'Stock updated successfully' });
-        });
+// Verify Google ID Token
+async function verifyToken(idToken) {
+    const ticket = await client.verifyIdToken({
+        idToken,
+        audience: CLIENT_ID,
     });
+    const payload = ticket.getPayload();
+    const email = payload['email'];
+    return email;
+}
+
+app.post('/verify-token', async (req, res) => {
+    const { idToken } = req.body;
+
+    try {
+        const email = await verifyToken(idToken);
+        if (email === adminEmail) {
+            res.json({ authorized: true });
+        } else {
+            res.json({ authorized: false });
+        }
+    } catch (error) {
+        res.status(400).json({ error: 'Invalid token' });
+    }
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });

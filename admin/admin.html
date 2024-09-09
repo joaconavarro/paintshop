@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="admin.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 </head>
 <body>
-    <div id="login-section">
-        <div class="login-container">
-            <h1>Admin Login</h1>
-            <form id="login-form">
-                <input type="text" id="username" placeholder="Username" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
-            <p id="login-error">Invalid username or password</p>
-        </div>
+    <div id="login-section" style="display: block;">
+<div class="g-signin2" data-onsuccess="onSignIn" data-client_id="425627947718-26j5n0t5t3kme55govd3n463ogolfjbo.apps.googleusercontent.com"></div>
+
+        <p id="login-error" style="display: none;">Invalid user</p>
     </div>
 
     <div id="admin-panel" style="display: none;">
@@ -41,7 +37,6 @@
     </div>
 
     <script src="admin.js"></script>
-    <script src="login.js"></script>
 
 </body>
 </html>
