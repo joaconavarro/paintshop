@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartItemsContainer = document.getElementById('cart-items');
     const totalPriceElement = document.getElementById('total-price');
     const cartButton = document.getElementById('cart-button');
-    const cartButtonDiv = document.getElementById('cart-button-div');
     const checkoutButton = document.getElementById('checkout-button');
     const closeDrawerButton = document.getElementById('close-drawer');
     const cart = {}; // Object to store cart items with their quantities
+    let jsonData = null; // Global variable to hold JSON data
 
     // Function to update the cart quantity display
     function updateCartButtonQuantity() {
@@ -67,30 +67,47 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update the cart button quantity display
         updateCartButtonQuantity();
     }
-    
 
     // Add item to cart
     function addToCart(item) {
+        if (!jsonData) {
+            console.error('JSON data not loaded');
+            return;
+        }
+
         const itemId = item.title; // Assuming title is unique
+
+        // Find the item in the JSON data
+        const itemInJson = jsonData.items.find(i => i.title === itemId);
+        
+        if (!itemInJson) {
+            console.error('Item not found in JSON data');
+            return;
+        }
+
+        // Check if the item is already in the cart
         if (cart[itemId]) {
-            if (cart[itemId].quantity < item.stock) {
+            // Check if we can increase the quantity based on the stock
+            if (cart[itemId].quantity < parseInt(itemInJson.stock, 10)) {
                 cart[itemId].quantity += 1;
             } else {
                 console.log('Cannot increase quantity. Stock limit reached.');
                 return;
             }
         } else {
+            // Add new item to the cart
             cart[itemId] = {
                 image: item.image,
                 title: item.title,
                 price: item.price,
                 quantity: 1,
-                stock: item.stock // Ensure stock is included
+                stock: itemInJson.stock // Initialize with stock value
             };
         }
+        
+        console.log('Cart updated:', cart); // Debugging
         renderCart();
     }
-    
 
     // Handle cart actions
     function handleCartAction(event) {
@@ -126,8 +143,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         renderCart();
     }
+
+    // Fetch and load JSON data
+    async function loadJsonData() {
+        try {
+            const response = await fetch('items.json'); // Adjust the path as needed
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            jsonData = await response.json();
+            console.log('JSON Data loaded:', jsonData); // Debugging
+            renderCart(); // Optionally render the cart with updated data
+        } catch (error) {
+            console.error('Error fetching JSON data:', error);
+        }
+    }
+
+    // Function to update stock on checkout
+    async function updateStockOnCheckout() {
+        try {
+            const response = await fetch('http://localhost:5500/update-stock', { // Update URL if needed
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ items: Object.values(cart) }) // Send cart items in the request body
+            });
     
+            if (!response.ok) {
+                throw new Error(`Network response was not ok: ${response.statusText}`);
+            }
     
+            const data = await response.json();
+            console.log('Stock updated successfully:', data);
+        } catch (error) {
+            console.error('Error updating stock:', error);
+        }
+    }
+    
+    // Assuming you have a button with id 'checkout-button' to trigger stock update
+    document.getElementById('checkout-button').addEventListener('click', updateStockOnCheckout);
     
 
     // Add event listeners
@@ -163,7 +218,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Checkout button navigation
     if (checkoutButton) {
         checkoutButton.addEventListener('click', () => {
-            window.location.href = '/pagar-mp.html';
+            // Perform checkout
+            updateStockOnCheckout(); // Call function to update stock
         });
     }
+
+    // Initialize
+    loadJsonData(); // Load JSON data after all functions are defined
 });
