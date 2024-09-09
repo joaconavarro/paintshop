@@ -1,24 +1,24 @@
 {
     "items": [
       {
-        "image": "../Artículos/albatros.webp",
+        "image": "./Artículos/albatros.webp",
         "title": "ALBATROS x 4 Litros <br><br>",
         "price": "$46000 <br><br>",
         "description": " Barniz Marino Exterior Doble Filtro Solar Brillante Alba. <br><br>",
         "stock": "5"
       },
       {
-        "image": "../Artículos/bañosycocinas.webp",
+        "image": "./Artículos/bañosycocinas.webp",
         "title": "BAÑOS Y COCINAS <br><br>",
         "price": "$26000 <br><br>",
-        "description": 5,
+        "description": "asdasdasdasd",
         "stock": "10"
       },
       {
-        "image": "../Artículos/cristalba.jpg",
+        "image": "./Artículos/cristalba.jpg",
         "title": "CRISTALBA x 1 Litro <br><br>",
         "price": "$16000 <br><br>",
-        "description": 1,
+        "description": "asdasdasd",
         "stock": "1"
       }
     ]

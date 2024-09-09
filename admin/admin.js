@@ -4,12 +4,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemList = document.getElementById('item-list');
     const itemForm = document.getElementById('item-form');
     const itemIdInput = document.getElementById('item-id');
+    const itemImageInput = document.getElementById('item-image');
     const itemTitleInput = document.getElementById('item-title');
     const itemPriceInput = document.getElementById('item-price');
     const itemDescriptionInput = document.getElementById('item-description');
     const itemStockInput = document.getElementById('item-stock');
 
-    let items = []; // Array to store items
+
+    function loadItems() {
+        fetch('../items.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                items = data.items || []; // Ensure items is an array
+                renderItems();
+            })
+            .catch(error => console.error('Error fetching items:', error));
+    }
+
+    // In-memory store for items
+    let items = []; 
 
     // Function to render items in the list
     function renderItems() {
@@ -26,41 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </li>
         `).join('');
-    }
-
-    // Function to load items from the JSON file
-    function loadItems() {
-        fetch('.//items.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                items = data.items || []; // Ensure items is an array
-                renderItems();
-            })
-            .catch(error => console.error('Error fetching items:', error));
-    }
-
-    // Function to save items to the JSON file
-    function saveItems() {
-        fetch('../items.json', {
-            method: 'POST', // Use POST to save data, PUT or PATCH for updates
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ items })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => console.log('Data saved:', data))
-        .catch(error => console.error('Error saving items:', error));
     }
 
     // Function to handle form submission
@@ -97,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         renderItems();
-        saveItems(); // Save updated items to backend
         itemForm.reset();
     }
 
@@ -120,13 +102,23 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (target.classList.contains('delete-item')) {
             items = items.filter(item => item.id !== itemId);
             renderItems();
-            saveItems(); // Save updated items to backend
         }
     }
 
     // Event listeners
     loadDataButton.addEventListener('click', loadItems);
-    saveDataButton.addEventListener('click', saveItems);
+    saveDataButton.addEventListener('click', () => {
+        // Save data to localStorage (optional)
+        localStorage.setItem('items', JSON.stringify(items));
+    });
     itemForm.addEventListener('submit', handleFormSubmit);
     itemList.addEventListener('click', handleItemListClick);
+
+    // Load data from localStorage on page load
+    const savedItems = localStorage.getItem('items');
+    if (savedItems) {
+        items = JSON.parse(savedItems);
+        renderItems();
+    }
 });
+
