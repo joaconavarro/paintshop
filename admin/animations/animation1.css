@@ -1,0 +1,29 @@
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%; /* Ensure it covers more than the container */
+    height: 100%;
+    background-image: url('path/to/sky-image.jpg'); /* Replace with your sky image path */
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: moveBackground 10s linear infinite;
+}
+
+.overlay-image {
+    position: relative;
+    z-index: 1;
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    background: url('path/to/overlay-image.png') no-repeat center center;
+    background-size: contain;
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
