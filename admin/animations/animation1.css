@@ -23,17 +23,17 @@
     top: 50%; /* Adjust vertical position as needed */
     left: 50%; /* Adjust horizontal position as needed */
     transform: translate(-50%, -50%); /* Center the overlay image */
-    width: 150px; /* Adjust size as needed */
-    height: auto;
+    width: 250px; /* Adjust size as needed */
+    height: 250px;
     background: url('flyingBg/overlay-image.png') no-repeat center center;
     background-size: contain;
 }
 
 @keyframes moveBackground {
     0% {
-        transform: translateX(0);
+        transform: translateX(-50);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(0%);
     }
 }
