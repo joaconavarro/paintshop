@@ -32,18 +32,18 @@
     width: 80px; /* Adjust size as needed */
     height: 80xpx;
     opacity: 0; /* Start with opacity 0 */
-    animation: slideIn 1s ease-out forwards; /* Slide-in effect */
+    animation: slideIn 2s ease-out forwards; /* Slide-in effect */
     z-index: 2; /* Ensure it is above the .image-bottom-right */
 }
 
 /* Keyframes for sliding in and fading in the image */
 @keyframes slideIn {
     from {
-        left: -200px; /* Start off-screen */
+        left: -100px; /* Start off-screen (adjust according to width) */
         opacity: 0; /* Start with opacity 0 */
     }
     to {
-        left: 700px; /* End position above the boxes.png image (adjust as needed) */
+        left: calc(100% - 110px); /* End position relative to the container's right edge (adjust as needed) */
         opacity: 1; /* End with opacity 1 */
     }
 }
