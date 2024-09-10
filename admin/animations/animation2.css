@@ -29,8 +29,8 @@
     top: 50%; /* Adjust vertical position as needed */
     left: -200px; /* Start position off-screen to the left (adjust width as needed) */
     transform: translateY(87%); /* Center vertically */
-    width: 80px; /* Adjust size as needed */
-    height: 80px; /* Ensure consistent height */
+    width: 75px; /* Adjust size as needed */
+    height: 75px; /* Ensure consistent height */
     opacity: 0; /* Start with opacity 0 */
     z-index: 2; /* Ensure it is above the .image-bottom-right */
     animation: slideIn 2s ease-out forwards;
@@ -45,7 +45,7 @@
         opacity: 0; /* Start with opacity 0 */
     }
     to {
-        left: calc(100% - 90px); /* End position relative to the container's right edge (adjust as needed) */
+        left: calc(100% - 30vw); /* End position relative to the container's right edge (adjust as needed) */
         opacity: 1; /* End with opacity 1 */
     }
 }
