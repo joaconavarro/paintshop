@@ -18,8 +18,7 @@
     bottom: 10px; /* Adjust the distance from the bottom */
     right: 10px;  /* Adjust the distance from the right */
     width: 150px; /* Adjust size as needed */
-    height: auto;
-    background: url('/boxes/boxes.png') no-repeat center center;
+    height: 150px;
     background-size: contain;
     z-index: 1; /* Ensures the image is on top of the container background */
 }
