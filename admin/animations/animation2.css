@@ -45,7 +45,7 @@
         opacity: 0; /* Start with opacity 0 */
     }
     to {
-        left: calc(100% - 30vw); /* End position relative to the container's right edge (adjust as needed) */
+        left: calc(100% - 220px); /* End position relative to the container's right edge (adjust as needed) */
         opacity: 1; /* End with opacity 1 */
     }
 }
