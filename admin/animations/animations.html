@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .button-container {
+            margin-bottom: 20px;
+        }
+        .button-container button {
+            background-color: #ff9800; /* Google orange color */
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button-container button:hover {
+            background-color: #e68900;
+        }
+        .button-container button:active {
+            transform: scale(0.98);
+        }
+        .main-content {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 80%;
+            max-width: 600px;
+            background-color: #ffffff;
+        }
+        .animation {
+            display: none;
+        }
+        .animation.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="showAnimation('animation1')">Animation 1</button>
+        <button onclick="showAnimation('animation2')">Animation 2</button>
+        <button onclick="showAnimation('animation3')">Animation 3</button>
+        <button onclick="showAnimation('animation4')">Animation 4</button>
+        <button onclick="showAnimation('animation5')">Animation 5</button>
+    </div>
+    <div class="main-content">
+        <div id="animation1" class="animation active">
+            <h2>Animation 1</h2>
+            <p>This is where Animation 1 content goes.</p>
+        </div>
+        <div id="animation2" class="animation">
+            <h2>Animation 2</h2>
+            <p>This is where Animation 2 content goes.</p>
+        </div>
+        <div id="animation3" class="animation">
+            <h2>Animation 3</h2>
+            <p>This is where Animation 3 content goes.</p>
+        </div>
+        <div id="animation4" class="animation">
+            <h2>Animation 4</h2>
+            <p>This is where Animation 4 content goes.</p>
+        </div>
+        <div id="animation5" class="animation">
+            <h2>Animation 5</h2>
+            <p>This is where Animation 5 content goes.</p>
+        </div>
+    </div>
+
+    <script>
+        function showAnimation(animationId) {
+            const animations = document.querySelectorAll('.animation');
+            animations.forEach(animation => {
+                if (animation.id === animationId) {
+                    animation.classList.add('active');
+                } else {
+                    animation.classList.remove('active');
+                }
+            });
+        }
+
+        // Set default animation
+        showAnimation('animation1');
+    </script>
+</body>
+</html>
