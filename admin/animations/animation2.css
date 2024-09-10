@@ -29,13 +29,45 @@
     top: 50%; /* Adjust vertical position as needed */
     left: -200px; /* Start position off-screen to the left (adjust width as needed) */
     transform: translateY(87%); /* Center vertically */
-    width: 75px; /* Adjust size as needed */
-    height: 75px; /* Ensure consistent height */
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Ensure consistent height */
     opacity: 0; /* Start with opacity 0 */
     z-index: 2; /* Ensure it is above the .image-bottom-right */
-    animation: slideIn 2s ease-out forwards;
-    animation-delay: 5s;
+    animation: slideIn 6s infinite;
+    animation-timing-function: cubic-bezier(0.15, 1, 0.25, 1);
 }
+.caja-2 {
+    position: absolute;
+    top: 30%;
+    left:80%; /* Adjust vertical position as needed */
+ /* Start position off-screen to the left (adjust width as needed) */
+    transform: translateY(87%); /* Center vertically */
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Ensure consistent height */
+    opacity: 0; /* Start with opacity 0 */
+    z-index: 2; /* Ensure it is above the .image-bottom-right */
+    animation: slideIn2 6s infinite;
+    animation-timing-function: cubic-bezier(0.15, 1, 0.25, 1);
+}
+.caja-3 {
+    position: absolute;
+    top: 10%;
+    left:90%;
+ /* Start position off-screen to the left (adjust width as needed) */
+    transform: translateY(87%); /* Center vertically */
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Ensure consistent height */
+    opacity: 0; /* Start with opacity 0 */
+    z-index: 2; /* Ensure it is above the .image-bottom-right */
+    animation: slideIn3 6s infinite;
+    animation-timing-function: cubic-bezier(0.4, 1, 0.25, 1);
+}
+
+/* Fade out effect */
+.fade-out {
+    opacity: 0;
+    transition: opacity 2s;
+  }
 
 
 /* Keyframes for sliding in and fading in the image */
@@ -49,3 +81,25 @@
         opacity: 1; /* End with opacity 1 */
     }
 }
+
+@keyframes slideIn2 {
+    from {
+        top: -100px; /* Start off-screen (adjust according to width) */
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        left: calc(100% - 195px); /* End position relative to the container's right edge (adjust as needed) */
+        opacity: .8; /* End with opacity 1 */
+    }
+}
+@keyframes slideIn3 {
+    from {
+        top: -200px; /* Start off-screen (adjust according to width) */
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        left: calc(100% - 150px); /* End position relative to the container's right edge (adjust as needed) */
+        opacity: .7; /* End with opacity 1 */
+    }
+}
+
