@@ -15,7 +15,7 @@
     z-index: 1;
     width: 150px; /* Adjust size as needed */
     height: auto;
-    background: url('flyingBg/overlay-image.png') no-repeat center center;
+    background: url('flyingBg/sky-image.jpg') no-repeat center center;
     background-size: contain;
 }
 
