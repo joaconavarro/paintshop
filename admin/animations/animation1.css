@@ -4,7 +4,7 @@
     left: 0;
     width: 200%; /* Ensure it covers more than the container */
     height: 100%;
-    background-image: url('flyingBg/sky-image.jpg'); /* Replace with your sky image path */
+    background-image: url('admin/animations/flyingBg/overlay-image.png'); /* Replace with your sky image path */
     background-size: cover;
     background-repeat: repeat-x;
     animation: moveBackground 10s linear infinite;
