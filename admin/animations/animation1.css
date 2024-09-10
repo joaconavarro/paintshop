@@ -4,7 +4,7 @@
     left: 0;
     width: 200%; /* Ensure it covers more than the container */
     height: 100%;
-    background-image: url('path/to/sky-image.jpg'); /* Replace with your sky image path */
+    background-image: url('flyingBG/sky-image.jpg'); /* Replace with your sky image path */
     background-size: cover;
     background-repeat: repeat-x;
     animation: moveBackground 10s linear infinite;
@@ -15,7 +15,7 @@
     z-index: 1;
     width: 150px; /* Adjust size as needed */
     height: auto;
-    background: url('path/to/overlay-image.png') no-repeat center center;
+    background: url('flyingBG/overlay-image.png') no-repeat center center;
     background-size: contain;
 }
 
