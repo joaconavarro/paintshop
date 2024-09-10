@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const logoutButton = document.getElementById('logout-button');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('isAuthenticated'); // Clear authentication state
+            window.location.href = './login.html'; // Redirect to login page
+        });
+    } else {
+        console.error('Logout button not found');
+    }
+});
+
+// Check authentication on page load
+function checkAuthentication() {
+    const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+    if (!isAuthenticated) {
+        window.location.href = './login.html'; // Redirect to login page if not authenticated
+    }
+}
+
+// Ensure authentication check on page load
+checkAuthentication();
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
     const loadDataButton = document.getElementById('load-data');
     const saveDataButton = document.getElementById('save-data');
     const itemList = document.getElementById('item-list');
