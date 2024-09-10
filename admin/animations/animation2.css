@@ -28,7 +28,7 @@
     position: absolute;
     top: 50%; /* Adjust vertical position as needed */
     left: -200px; /* Start position off-screen to the left (adjust width as needed) */
-    transform: translateY(-50%); /* Center vertically */
+    transform: translateY(87%); /* Center vertically */
     width: 80px; /* Adjust size as needed */
     height: 80px; /* Ensure consistent height */
     opacity: 0; /* Start with opacity 0 */
