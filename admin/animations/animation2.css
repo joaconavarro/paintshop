@@ -22,3 +22,28 @@
     background-size: contain;
     z-index: 1; /* Ensures the image is on top of the container background */
 }
+
+/* Image that translates from the left and fades in */
+.caja-1 {
+    position: absolute;
+    top: 50%; /* Adjust vertical position as needed */
+    left: -200px; /* Start position off-screen to the left */
+    transform: translateY(-50%); /* Center vertically */
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0; /* Start with opacity 0 */
+    animation: slideIn 5s ease-out forwards; /* Slide-in effect */
+    z-index: 2; /* Ensure it is above the .image-bottom-right */
+}
+
+/* Keyframes for sliding in and fading in the image */
+@keyframes slideIn {
+    from {
+        left: -200px; /* Start off-screen */
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        left: 10px; /* End position above the boxes.png image (adjust as needed) */
+        opacity: 1; /* End with opacity 1 */
+    }
+}
