@@ -33,12 +33,10 @@
     height: 80px; /* Ensure consistent height */
     opacity: 0; /* Start with opacity 0 */
     z-index: 2; /* Ensure it is above the .image-bottom-right */
+    animation: slideIn 2s ease-out forwards;
+    animation-delay: 5s;
 }
 
-/* Add this class to trigger the animation */
-.animate-caja-1 {
-    animation: slideIn 5s ease-out forwards; /* Slide-in effect */
-}
 
 /* Keyframes for sliding in and fading in the image */
 @keyframes slideIn {
