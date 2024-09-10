@@ -28,9 +28,9 @@
     position: absolute;
     top: 50%; /* Adjust vertical position as needed */
     left: -200px; /* Start position off-screen to the left */
-    transform: translateY(-50%); /* Center vertically */
-    width: 100px; /* Adjust size as needed */
-    height: auto;
+    transform: translateY(80%); /* Center vertically */
+    width: 80px; /* Adjust size as needed */
+    height: 80xpx;
     opacity: 0; /* Start with opacity 0 */
     animation: slideIn 5s ease-out forwards; /* Slide-in effect */
     z-index: 2; /* Ensure it is above the .image-bottom-right */
@@ -43,7 +43,7 @@
         opacity: 0; /* Start with opacity 0 */
     }
     to {
-        left: 10px; /* End position above the boxes.png image (adjust as needed) */
+        left: 200px; /* End position above the boxes.png image (adjust as needed) */
         opacity: 1; /* End with opacity 1 */
     }
 }
