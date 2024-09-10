@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling during animation */
+}
+
+.login-container {
+    position: relative; /* Set position relative to contain absolutely positioned elements */
+    width: 300px; /* Fixed width for the container */
+    padding: 20px;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center contents horizontally */
+}
+
+.login-container h2 {
+    margin: 0 0 20px;
+}
+
+.login-container input {
+    width: 85%; /* Set width to 85% of the container */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block; /* Make inputs block-level elements for better centering */
+    margin-left: auto;
+    margin-right: auto; /* Center horizontally */
+}
+.login-container {
+    position: relative; /* Set position relative to contain absolutely positioned elements */
+    width: 300px; /* Fixed width for the container */
+    padding: 20px;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center contents horizontally */
+    animation: pulsate 3s infinite; /* Apply pulsate animation */
+    animation-delay: 6500ms; /* Delay animation start by 6500 milliseconds */
+}
+
+.login-container h2 {
+    margin: 0 0 20px;
+}
+
+.login-container input {
+    width: 85%; /* Set width to 85% of the container */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block; /* Make inputs block-level elements for better centering */
+    margin-left: auto;
+    margin-right: auto; /* Center horizontally */
+}
+
+.login-container button {
+    width: 85%; /* Same width as inputs for consistency */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    display: block; /* Make button a block-level element */
+    margin-left: auto;
+    margin-right: auto; /* Center horizontally */
+}
+
+/* Keyframes for pulsating effect */
+@keyframes pulsate {
+    0% {
+        transform: scale(1); /* Original size */
+    }
+    50% {
+        transform: scale(1.1); /* Scaled up by 10% */
+    }
+    100% {
+        transform: scale(1); /* Back to original size */
+    }
+}
+
+.animated-image {
+    position: absolute;
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    top: -100px; /* Start from outside the top of the screen */
+    right: -100px; /* Start from outside the right of the screen */
+    pointer-events: none;
+    z-index: 1000;
+    /* Initial position will be controlled by JavaScript */
+    opacity: 0; /* Initially hidden */
+    transform: scale(1); /* Initially no scaling */
+}
+
+/* Define keyframes for the flying, spinning, zooming, and fading animation */
+@keyframes flyInZoomOut {
+    0% {
+        transform: translate(100vw, -100vh) rotate(0deg); /* Start from outside with smaller scale */
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, 50%) rotate(180deg) scale(1.5); /* Midway with 180° spin and larger scale */
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg) scale(50); /* End with original scale */
+        opacity: 0; /* Fade out */
+    }
+}
