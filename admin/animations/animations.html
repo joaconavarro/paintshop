@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <script function showAnimation(animationId) {
+    <script> function showAnimation(animationId) {
             const animations = document.querySelectorAll('.animation');
             animations.forEach(animation => {
                 if (animation.id === animationId) {
@@ -56,6 +56,7 @@
         }
 
         // Set default animation
-        showAnimation('animation1');></script>
+        showAnimation('animation1');
+    </script>
 </body>
 </html>
