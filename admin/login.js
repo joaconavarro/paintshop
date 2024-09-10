@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Direct comparison since sheetData is an object
                 if (username === sheetData.username && password === sheetData.password) {
                     localStorage.setItem('isAuthenticated', 'true');
-                    window.location.href = 'admin/admin-site.html'; // Redirect after successful login
+                    window.location.href = 'paintshop/admin/admin-site.html'; // Redirect after successful login
                 } else {
                     alert('Invalid credentials');
                 }
