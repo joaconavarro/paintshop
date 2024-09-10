@@ -26,10 +26,10 @@
 .caja-1 {
     position: absolute;
     top: 50%; /* Adjust vertical position as needed */
-    left: -100px; /* Start position off-screen to the left (adjust width as needed) */
-    transform: translateY(-50%); /* Center vertically */
-    width: 100px; /* Adjust size as needed */
-    height: auto;
+    left: -200px; /* Start position off-screen to the left (adjust width as needed) */
+    transform: translateY(87%); /* Center vertically */
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
     opacity: 0; /* Start with opacity 0 */
     z-index: 2; /* Ensure it is above the .image-bottom-right */
 }
